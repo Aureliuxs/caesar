@@ -67,10 +67,16 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             className="mt-10 flex items-center justify-center gap-x-6 flex-wrap"
           >
-            <button className="focus-ring inline-flex items-center rounded-xl bg-white px-6 py-3 text-slate-900 font-semibold hover:bg-slate-100 active:bg-slate-200 transition-colors">
+            <button
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              className="focus-ring inline-flex items-center rounded-xl bg-white px-6 py-3 text-slate-900 font-semibold hover:bg-slate-100 active:bg-slate-200 transition-colors"
+            >
               View Projects
             </button>
-            <button className="focus-ring inline-flex items-center rounded-xl border border-white/30 bg-white/10 backdrop-blur px-6 py-3 text-white hover:bg-white/20 transition-colors">
+            <button
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              className="focus-ring inline-flex items-center rounded-xl border border-white/30 bg-white/10 backdrop-blur px-6 py-3 text-white hover:bg-white/20 transition-colors"
+            >
               Learn more
             </button>
           </motion.div>
@@ -100,7 +106,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold tracking-tight text-white mb-4">Projects</h2>
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-              Interactive simulations and analysis tools for exploring complex networks and quantum systems
+              Current projects contain placeholders for future projects.
             </p>
           </div>
 
