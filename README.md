@@ -1,70 +1,84 @@
 # Caesar – Computational Physics Simulations
 
-A static website showcasing interactive computational physics simulations built with vanilla JavaScript. No frameworks, no build tools – just pure HTML, CSS, and JavaScript that runs anywhere.
+A Next.js web application showcasing interactive computational physics simulations and personal projects.
 
 ## Overview
 
-Caesar is a collection of browser-based physics simulations designed for education and exploration. Each simulation is interactive, allowing you to adjust parameters in real-time and observe how physical systems behave.
+Caesar is a collection of browser-based physics simulations and projects designed for education and exploration. Each project is interactive, featuring a modern UI with video backgrounds and smooth animations.
 
 ## Project Structure
 
+This is a Next.js 15 application with the following structure:
+
 ```
 caesar/
-├── index.html              # Landing page with simulation listings
-├── styles.css              # Site-wide styling
-├── simulations/            # Individual simulation pages
-│   └── test-simulation.html
-└── js/                     # JavaScript for each simulation
-    └── test-simulation.js
+├── src/app/              # Next.js app router pages
+│   ├── page.tsx         # Main landing page
+│   ├── layout.tsx       # Root layout
+│   └── globals.css      # Global styles
+├── components/          # React components
+│   ├── Header.tsx       # Navigation header
+│   ├── BackgroundVideo.tsx
+│   └── FeatureCard.tsx  # Project cards
+├── public/              # Static assets
+│   ├── bg/             # Background videos
+│   └── images/         # Project images
+└── lib/                # Utilities and helpers
 ```
 
 ## How to Use
 
 ### Local Development
 
-Simply open `index.html` in any modern web browser. No server required!
-
 ```bash
-# Option 1: Open directly
-open index.html
+# Install dependencies
+npm install
 
-# Option 2: Use a simple HTTP server (optional)
-python3 -m http.server 8000
-# Then visit http://localhost:8000
+# Run development server
+npm run dev
+
+# Visit http://localhost:3000
 ```
 
-### Deployment
+### Build for Production
 
-This is a static site that can be deployed to any static hosting service:
+```bash
+npm run build
+npm start
+```
 
-- **Vercel**: Connect your git repository and deploy
-- **Netlify**: Drag and drop the folder or connect via git
-- **GitHub Pages**: Push to a repository and enable GitHub Pages
+## Deployment
 
-No build step needed – just deploy the files as-is.
+This Next.js app is configured for deployment on Vercel:
 
-## Adding New Simulations
+1. Connect your GitHub repository to Vercel
+2. Vercel will auto-detect Next.js and configure build settings
+3. Every push to `main` triggers automatic deployment
 
-1. Create a new HTML file in `simulations/` (e.g., `pendulum.html`)
-2. Create corresponding JavaScript in `js/` (e.g., `pendulum.js`)
-3. Link the stylesheet: `<link rel="stylesheet" href="../styles.css">`
-4. Add a simulation card to `index.html`
+## Adding New Projects
 
-## Current Simulations
+1. Add project card to `src/app/page.tsx` in the Projects section
+2. Add project image to `public/images/features/`
+3. Create new page in `src/app/` if needed
 
-- **Test Simulation**: Particle system with gravity, collision detection, and adjustable physics parameters
+## Current Projects
+
+- **Particle Physics Simulation**: Real-time particle system with gravity and collisions
+- **Quantum Network Communication**: Network visualization (coming soon)
+- **Additional projects**: Placeholders for future simulations
 
 ## Tech Stack
 
-- Pure HTML5
-- Vanilla JavaScript (ES6+)
-- CSS3 with modern features
-- Canvas API for graphics
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+- **React 19** - UI library
 
-## Philosophy
+## Features
 
-This project deliberately avoids frameworks and build tools to:
-- Maximize portability and longevity
-- Minimize dependencies and maintenance burden
-- Keep the codebase accessible to learners
-- Ensure fast load times and simple deployment
+- Video background with fallback support
+- Smooth scroll navigation
+- Fade-in animations
+- Responsive design
+- Accessibility support (respects `prefers-reduced-motion`)
