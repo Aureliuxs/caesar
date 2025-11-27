@@ -1,5 +1,5 @@
 interface HeaderProps {
-  active: "home" | "about" | "features";
+  active: "home" | "about" | "projects";
 }
 
 export default function Header({ active }: HeaderProps) {
@@ -32,14 +32,14 @@ export default function Header({ active }: HeaderProps) {
                 About
               </button>
               <button
-                onClick={() => handleNavClick('features')}
+                onClick={() => handleNavClick('projects')}
                 className={`focus-ring transition-colors relative ${
-                  active === 'features'
+                  active === 'projects'
                     ? 'text-white after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-white'
                     : 'text-slate-200 hover:text-white'
                 }`}
               >
-                Features
+                Projects
               </button>
             </nav>
           </div>

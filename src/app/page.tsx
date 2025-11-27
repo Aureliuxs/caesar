@@ -9,7 +9,7 @@ import Section from '@/components/Section';
 import FeatureCard from '@/components/FeatureCard';
 
 export default function Home() {
-  const [active, setActive] = useState<"home" | "about" | "features">("home");
+  const [active, setActive] = useState<"home" | "about" | "projects">("home");
 
   useEffect(() => {
     // Setup intersection observer to track active section
@@ -17,7 +17,7 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const id = entry.target.id as "home" | "about" | "features";
+            const id = entry.target.id as "home" | "about" | "projects";
             setActive(id);
           }
         });
@@ -58,7 +58,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
             className="mt-6 text-xl leading-8 text-slate-200 max-w-2xl mx-auto"
           >
-            Explore the intersection of statistical mechanics and quantum physics through interactive simulations
+            A collection of personal projects made by Aurelius
           </motion.p>
 
           <motion.div
@@ -68,7 +68,7 @@ export default function Home() {
             className="mt-10 flex items-center justify-center gap-x-6 flex-wrap"
           >
             <button className="focus-ring inline-flex items-center rounded-xl bg-white px-6 py-3 text-slate-900 font-semibold hover:bg-slate-100 active:bg-slate-200 transition-colors">
-              Open Playground
+              View Projects
             </button>
             <button className="focus-ring inline-flex items-center rounded-xl border border-white/30 bg-white/10 backdrop-blur px-6 py-3 text-white hover:bg-white/20 transition-colors">
               Learn more
@@ -99,17 +99,23 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* FEATURES Section */}
-      <Section id="features" overlay="dark">
+      {/* PROJECTS Section */}
+      <Section id="projects" overlay="dark">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold tracking-tight text-white mb-4">Features</h2>
+            <h2 className="text-4xl font-bold tracking-tight text-white mb-4">Projects</h2>
             <p className="text-slate-300 text-lg max-w-2xl mx-auto">
               Interactive simulations and analysis tools for exploring complex networks and quantum systems
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <FeatureCard
+              title="Particle Physics Simulation"
+              imageSrc="/images/features/particles.jpg"
+              imageAlt="Particle system with gravity and collisions"
+              href="/simulations/test-simulation.html"
+            />
             <FeatureCard
               title="Quantum network communication"
               imageSrc="/images/features/quantum.jpg"
@@ -125,11 +131,6 @@ export default function Home() {
               title="Graph neural networks"
               imageSrc="/images/features/gnn.jpg"
               imageAlt="Graph neural network architecture"
-            />
-            <FeatureCard
-              title="Commodity networks"
-              imageSrc="/images/features/commodity.jpg"
-              imageAlt="Global commodity trading network"
             />
           </div>
         </div>
