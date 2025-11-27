@@ -1,0 +1,1 @@
+Drop a short, muted loop video named network-loop.mp4 here (e.g., 1280x720 H.264), ~3–8 MB. The app will auto-use it.

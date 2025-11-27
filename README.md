@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Caesar – Computational Physics Simulations
 
-## Getting Started
+A static website showcasing interactive computational physics simulations built with vanilla JavaScript. No frameworks, no build tools – just pure HTML, CSS, and JavaScript that runs anywhere.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Caesar is a collection of browser-based physics simulations designed for education and exploration. Each simulation is interactive, allowing you to adjust parameters in real-time and observe how physical systems behave.
+
+## Project Structure
+
+```
+caesar/
+├── index.html              # Landing page with simulation listings
+├── styles.css              # Site-wide styling
+├── simulations/            # Individual simulation pages
+│   └── test-simulation.html
+└── js/                     # JavaScript for each simulation
+    └── test-simulation.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Use
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Local Development
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Simply open `index.html` in any modern web browser. No server required!
 
-## Learn More
+```bash
+# Option 1: Open directly
+open index.html
 
-To learn more about Next.js, take a look at the following resources:
+# Option 2: Use a simple HTTP server (optional)
+python3 -m http.server 8000
+# Then visit http://localhost:8000
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This is a static site that can be deployed to any static hosting service:
 
-## Deploy on Vercel
+- **Vercel**: Connect your git repository and deploy
+- **Netlify**: Drag and drop the folder or connect via git
+- **GitHub Pages**: Push to a repository and enable GitHub Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+No build step needed – just deploy the files as-is.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Adding New Simulations
+
+1. Create a new HTML file in `simulations/` (e.g., `pendulum.html`)
+2. Create corresponding JavaScript in `js/` (e.g., `pendulum.js`)
+3. Link the stylesheet: `<link rel="stylesheet" href="../styles.css">`
+4. Add a simulation card to `index.html`
+
+## Current Simulations
+
+- **Test Simulation**: Particle system with gravity, collision detection, and adjustable physics parameters
+
+## Tech Stack
+
+- Pure HTML5
+- Vanilla JavaScript (ES6+)
+- CSS3 with modern features
+- Canvas API for graphics
+
+## Philosophy
+
+This project deliberately avoids frameworks and build tools to:
+- Maximize portability and longevity
+- Minimize dependencies and maintenance burden
+- Keep the codebase accessible to learners
+- Ensure fast load times and simple deployment
