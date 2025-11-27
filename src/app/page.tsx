@@ -84,16 +84,11 @@ export default function Home() {
 
           <div className="prose prose-lg prose-invert max-w-none">
             <p className="text-slate-300 text-lg leading-relaxed mb-6">
-              Caesar is a computational physics platform designed to bridge the gap between theoretical concepts
-              and interactive exploration. Built for researchers, students, and curious minds who want to
-              understand complex systems through hands-on experimentation.
+              Hi, my name is Aurelius, a Theoretical Physics student at Imperial College London. I am interested in complex systems ranging from geopolitics to condensed matter physics. This website is a collection of some of my projects and experiments.
             </p>
 
             <p className="text-slate-400 leading-relaxed">
-              The platform focuses on network theory, quantum systems, and statistical mechanics—areas where
-              visualization and parameter manipulation can provide deep insights into underlying mathematical
-              structures. Every simulation is designed with reproducibility in mind, ensuring that discoveries
-              can be shared and verified across the scientific community.
+              If you wish to get in touch, you can find me on <a href="www.linkedin.com/in/aureliusc" className="text-slate-300 hover:text-white transition-colors">LinkedIn</a>.
             </p>
           </div>
         </div>
