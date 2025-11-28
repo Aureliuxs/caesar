@@ -206,7 +206,6 @@ export class FractalRenderer {
     if (!this.overscanViewport) return true;
 
     const scale = 4 / this.viewport.zoom;
-    const overscanScale = 4 / this.overscanViewport.zoom;
 
     // Check if zoom changed significantly
     if (Math.abs(this.viewport.zoom - this.overscanViewport.zoom) > this.viewport.zoom * 0.01) {
@@ -225,8 +224,6 @@ export class FractalRenderer {
    * Zoom at a specific point
    */
   zoom(factor: number, mouseX?: number, mouseY?: number) {
-    const oldZoom = this.viewport.zoom;
-
     // Apply zoom limits
     const newZoom = this.viewport.zoom * factor;
     if (newZoom < this.minZoom || newZoom > this.maxZoom) {
@@ -265,7 +262,6 @@ export class FractalRenderer {
    * Update fractal parameters
    */
   updateParams(params: Partial<FractalParams>) {
-    const oldParams = { ...this.params };
     this.params = { ...this.params, ...params };
 
     // If only color changed, use fast recolor

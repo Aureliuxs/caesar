@@ -15,8 +15,8 @@ interface AnimationState {
 export default function FractalSimulator() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const rendererRef = useRef<FractalRenderer | null>(null);
-  const animationFrameRef = useRef<number>();
-  const zoomTimeoutRef = useRef<number>();
+  const animationFrameRef = useRef<number | undefined>(undefined);
+  const zoomTimeoutRef = useRef<number | undefined>(undefined);
 
   const [headerVisible, setHeaderVisible] = useState(true);
   const [controlsVisible, setControlsVisible] = useState(true);
