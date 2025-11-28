@@ -112,10 +112,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <FeatureCard
-              title="Particle Physics Simulation"
-              imageSrc="/images/features/particles.jpg"
-              imageAlt="Particle system with gravity and collisions"
-              href="/simulations/test-simulation.html"
+              title="Fractal Fun"
+              imageSrc="/images/features/fractal.svg"
+              imageAlt="Interactive fractal explorer with Mandelbrot and Julia sets"
+              href="/sim/fractal"
             />
             <FeatureCard
               title="Quantum network communication"
